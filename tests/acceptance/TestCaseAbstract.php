@@ -8,6 +8,7 @@ use PHPUnitProviderAutoloader;
 use Redaxscript\Config;
 use Redaxscript\Db;
 use Redaxscript\Language;
+use Redaxscript\Model;
 use Redaxscript\Registry;
 use Redaxscript\Request;
 
