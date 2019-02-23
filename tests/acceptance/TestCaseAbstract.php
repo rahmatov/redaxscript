@@ -105,4 +105,17 @@ abstract class TestCaseAbstract extends PHPUnitProviderAutoloader\TestCaseAbstra
 	{
 		$this->_driver->quit();
 	}
+
+	/**
+	 * settingFactory
+	 *
+	 * @since 4.0.0
+	 *
+	 * @return Model\Setting
+	 */
+
+	public function settingFactory() : Model\Setting
+	{
+		return new Model\Setting();
+	}
 }
