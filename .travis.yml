@@ -86,7 +86,7 @@ jobs:
 
    before_script:
    - mkdir build
-   - grunt startHub &
+   - grunt start-hub &
    - grunt serve &
    - sleep 60
 
