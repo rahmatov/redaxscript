@@ -8,14 +8,13 @@ use PHPUnitProviderAutoloader;
 use Redaxscript\Config;
 use Redaxscript\Db;
 use Redaxscript\Language;
-use Redaxscript\Model;
 use Redaxscript\Registry;
 use Redaxscript\Request;
 
 /**
  * TestCaseAbstract
  *
- * @since 2.2.0
+ * @since 4.0.0
  *
  * @package Redaxscript
  * @category Tests
@@ -105,18 +104,5 @@ abstract class TestCaseAbstract extends PHPUnitProviderAutoloader\TestCaseAbstra
 	public function tearDown()
 	{
 		$this->_driver->quit();
-	}
-
-	/**
-	 * settingFactory
-	 *
-	 * @since 4.0.0
-	 *
-	 * @return Model\Setting
-	 */
-
-	public function settingFactory() : Model\Setting
-	{
-		return new Model\Setting();
 	}
 }

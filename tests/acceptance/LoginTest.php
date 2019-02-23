@@ -36,11 +36,9 @@ class LoginTest extends TestCaseAbstract
 
 	public function testTitle()
 	{
-		$setting = $this->settingFactory();
-
 		/* expect and actual */
 
-		$expect = $this->_language->get('login') . $setting->get('divider') . $this->_language->get('name', '_package');
+		$expect = $this->_language->get('login') . ' - ' . $this->_language->get('name', '_package');
 		$actual = $this->_driver->getTitle();
 
 		/* compare */

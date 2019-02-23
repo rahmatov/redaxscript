@@ -8,7 +8,7 @@ module.exports = grunt =>
 		{
 			tasks:
 			[
-				'startServer',
+				'start-server',
 				'watch'
 			]
 		},
@@ -20,7 +20,7 @@ module.exports = grunt =>
 	};
 	if (grunt.option('O') || grunt.option('open-browser'))
 	{
-		config.serve.tasks.push('openBrowser');
+		config.serve.tasks.push('open-browser');
 	}
 
 	return config;
