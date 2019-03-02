@@ -114,6 +114,7 @@ module.exports = grunt =>
 			htmlDemo: false
 		}
 	};
+
 	if (grunt.option('W') || grunt.option('webfont-compat'))
 	{
 		config.options.engine = 'node';

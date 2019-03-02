@@ -18,6 +18,7 @@ module.exports = grunt =>
 			stream: true
 		}
 	};
+
 	if (grunt.option('O') || grunt.option('open-browser'))
 	{
 		config.serve.tasks.push('open-browser');
