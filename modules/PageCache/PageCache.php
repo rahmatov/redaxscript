@@ -50,7 +50,7 @@ class PageCache extends Module\Notification
 			'pages' => 'cache/pages'
 		],
 		'extension' => 'phtml',
-		'lifetime' => 60,
+		'lifetime' => 300,
 		'tokenPlaceholder' => '%TOKEN%'
 	];
 
