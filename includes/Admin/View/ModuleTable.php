@@ -6,6 +6,7 @@ use Redaxscript\Filesystem;
 use Redaxscript\Html;
 use Redaxscript\Module;
 use function array_diff;
+use function in_array;
 use function count;
 
 /**
@@ -119,8 +120,9 @@ class ModuleTable extends ViewAbstract
 					->copy()
 					->attr('id', 'row-' . $value->id)
 					->addClass(!$value->status ? 'rs-admin-is-disabled' : null)
+					->addClass(!in_array($value->alias, $modulesFilesystemArray) ? 'rs-admin-is-corrupted' : null)
 					->html(
-						$tdElement->copy()->html($value->name . $adminControl->render('modules', $value->id, $value->alias, $value->status)) .
+						$tdElement->copy()->html($value->name . $adminControl->render('modules', $value->id, $value->alias,  $value->status)) .
 						$tdElement->copy()->text($value->description) .
 						$tdElement->copy()->text($value->version)
 				);
