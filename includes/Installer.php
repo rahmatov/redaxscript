@@ -1,8 +1,8 @@
 <?php
 namespace Redaxscript;
 
-use function class_exists;
 use function file_get_contents;
+use function method_exists;
 use function str_replace;
 use function ucfirst;
 
@@ -379,7 +379,7 @@ class Installer
 
 			/* install */
 
-			if (class_exists($moduleClass))
+			if (method_exists($moduleClass, 'install'))
 			{
 				$module = new $moduleClass($this->_registry, $this->_request, $this->_language, $this->_config);
 				$module->install();

@@ -2,6 +2,7 @@
 namespace Redaxscript\Admin\Controller;
 
 use Redaxscript\Admin;
+use function method_exists;
 
 /**
  * children class to handle common
@@ -287,8 +288,11 @@ class Common extends ControllerAbstract
 		if ($table === 'modules')
 		{
 			$moduleClass = 'Redaxscript\Modules\\' . $alias . '\\' . $alias;
-			$module = new $moduleClass($this->_registry, $this->_request, $this->_language, $this->_config);
-			return $module->install();
+			if (method_exists($moduleClass, 'install'))
+			{
+				$module = new $moduleClass($this->_registry, $this->_request, $this->_language, $this->_config);
+				return $module->install();
+			}
 		}
 		return false;
 	}
@@ -309,8 +313,11 @@ class Common extends ControllerAbstract
 		if ($table === 'modules')
 		{
 			$moduleClass = 'Redaxscript\Modules\\' . $alias . '\\' . $alias;
-			$module = new $moduleClass($this->_registry, $this->_request, $this->_language, $this->_config);
-			return $module->uninstall();
+			if (method_exists($moduleClass, 'uninstall'))
+			{
+				$module = new $moduleClass($this->_registry, $this->_request, $this->_language, $this->_config);
+				return $module->uninstall();
+			}
 		}
 		return false;
 	}
