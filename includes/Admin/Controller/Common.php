@@ -148,7 +148,7 @@ class Common extends ControllerAbstract
 	 * @return bool
 	 */
 
-	public function _publish(string $table = null, int $id = null) : bool
+	protected function _publish(string $table = null, int $id = null) : bool
 	{
 		if ($table === 'categories')
 		{
@@ -184,7 +184,7 @@ class Common extends ControllerAbstract
 	 * @return bool
 	 */
 
-	public function _unpublish(string $table = null, int $id = null) : bool
+	protected function _unpublish(string $table = null, int $id = null) : bool
 	{
 		if ($table === 'categories')
 		{
@@ -220,7 +220,7 @@ class Common extends ControllerAbstract
 	 * @return bool
 	 */
 
-	public function _enable(string $table = null, int $id = null) : bool
+	protected function _enable(string $table = null, int $id = null) : bool
 	{
 		if ($table === 'groups')
 		{
@@ -251,7 +251,7 @@ class Common extends ControllerAbstract
 	 * @return bool
 	 */
 
-	public function _disable(string $table = null, int $id = null) : bool
+	protected function _disable(string $table = null, int $id = null) : bool
 	{
 		if ($table === 'groups')
 		{
@@ -282,7 +282,7 @@ class Common extends ControllerAbstract
 	 * @return bool
 	 */
 
-	public function _install(string $table = null, string $alias = null) : bool
+	protected function _install(string $table = null, string $alias = null) : bool
 	{
 		if ($table === 'modules')
 		{
@@ -304,7 +304,7 @@ class Common extends ControllerAbstract
 	 * @return bool
 	 */
 
-	public function _uninstall(string $table = null, string $alias = null) : bool
+	protected function _uninstall(string $table = null, string $alias = null) : bool
 	{
 		if ($table === 'modules')
 		{
@@ -326,7 +326,7 @@ class Common extends ControllerAbstract
 	 * @return bool
 	 */
 
-	public function _delete(string $table = null, int $id = null) : bool
+	protected function _delete(string $table = null, int $id = null) : bool
 	{
 		if ($table === 'categories')
 		{
@@ -362,7 +362,7 @@ class Common extends ControllerAbstract
 	}
 
 	/**
-	 * get route
+	 * get the route
 	 *
 	 * @since 4.0.0
 	 *
@@ -372,7 +372,7 @@ class Common extends ControllerAbstract
 	 * @return string
 	 */
 
-	public function _getRoute(string $table = null, int $id = null) : string
+	protected function _getRoute(string $table = null, int $id = null) : string
 	{
 		if ($this->_registry->get($table . 'Edit'))
 		{

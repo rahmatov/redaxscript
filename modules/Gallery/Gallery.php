@@ -201,7 +201,7 @@ class Gallery extends Module\Notification
 	 * @return string|null
 	 */
 
-	public function _renderItem(string $directory = null, array $optionArray = []) : ?string
+	protected function _renderItem(string $directory = null, array $optionArray = []) : ?string
 	{
 		$outputItem = null;
 		$itemCounter = 0;

@@ -184,7 +184,7 @@ class Pagination extends ViewAbstract
 	 * @return array
 	 */
 
-	public function _getNumberArray(int $current = null, int $total = null, int $range = 0) : array
+	protected function _getNumberArray(int $current = null, int $total = null, int $range = 0) : array
 	{
 		$start = $current - $range;
 		$end = $current + $range;

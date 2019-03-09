@@ -148,7 +148,7 @@ class Loader
 	 * @param array $optionArray
 	 */
 
-	public function _handleCache(array $rewriteArray = [], array $bundleArray = [], array $restArray = [], array $optionArray = [])
+	protected function _handleCache(array $rewriteArray = [], array $bundleArray = [], array $restArray = [], array $optionArray = [])
 	{
 		$cacheFilesystem = new Filesystem\Cache();
 		$cacheFilesystem->init($optionArray['directory'], $optionArray['extension']);

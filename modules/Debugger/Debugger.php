@@ -81,7 +81,7 @@ class Debugger extends Module\Module
 	 * @return array
 	 */
 
-	public function _getArray() : array
+	protected function _getArray() : array
 	{
 		return array_filter(
 		[
@@ -106,7 +106,7 @@ class Debugger extends Module\Module
 	 * @return array
 	 */
 
-	public function _flattenArray(array $dirtyArray = []) : array
+	protected function _flattenArray(array $dirtyArray = []) : array
 	{
 		$flatArray = [];
 
