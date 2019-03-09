@@ -6,7 +6,6 @@ rs.modules.TableSorter.process = optionArray =>
 		...optionArray
 	};
 	const tbodyList = document.querySelectorAll(OPTION.selector);
-	const moveList = document.querySelectorAll(OPTION.element.move);
 
 	if (tbodyList)
 	{
@@ -40,13 +39,6 @@ rs.modules.TableSorter.process = optionArray =>
 				})
 				.then(() => OPTION.reload ? location.reload() : null);
 			});
-		});
-	}
-	if (moveList)
-	{
-		moveList.forEach(move =>
-		{
-			move.addEventListener('touchmove', event => event.preventDefault());
 		});
 	}
 };
