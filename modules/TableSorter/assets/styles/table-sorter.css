@@ -17,16 +17,19 @@
 	pointer-events: none;
 	position: relative;
 	text-indent: -999em;
-	touch-action: none;
 
 	&:before
 	{
-		@extend %rs-icon-drag-vertical;
 		color: gray(70);
 		font-size: 1.75em;
 		position: absolute;
 		right: 0.5em;
 		text-indent: 0;
+	}
+
+	&:before
+	{
+		@extend %rs-icon-drag-vertical;
 		top: 50%;
 		transform: translateY(-50%);
 	}
