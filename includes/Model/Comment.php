@@ -1,11 +1,9 @@
 <?php
 namespace Redaxscript\Model;
 
-use function array_column;
 use function array_filter;
-use function array_pop;
-use function array_search;
 use function implode;
+use function is_array;
 
 /**
  * parent class to provide the comment model
