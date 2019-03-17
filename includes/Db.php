@@ -281,7 +281,7 @@ class Db extends ORM
 
 	public function orderBySetting(string $column = null) : self
 	{
-		$order = self::forTablePrefix('settings')->where('name', 'order')->findOne()->value;
+		$order = $this->getSetting('order');
 		return $this->_addOrderBy($column, $order);
 	}
 
@@ -297,8 +297,34 @@ class Db extends ORM
 
 	public function limitBySetting(int $step = null) : self
 	{
-		$limit = self::forTablePrefix('settings')->where('name', 'limit')->findOne()->value;
+		$limit = $this->getSetting('limit');
 		$this->_limit = $step > 0 ? $step * $limit . ',' . $limit : $limit;
 		return $this;
+	}
+
+	/**
+	 * get the value from settings
+	 *
+	 * @since 4.0.0
+	 *
+	 * @param string $key key of the item
+	 *
+	 * @return string|null
+	 */
+
+	public function getSetting(string $key = null) : ?string
+	{
+		$settings = self::forTablePrefix('settings')->findMany();
+
+		/* process settings */
+
+		foreach ($settings as $setting)
+		{
+			if ($setting->name === $key)
+			{
+				return $setting->value;
+			}
+		}
+		return null;
 	}
 }
