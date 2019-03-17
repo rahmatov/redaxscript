@@ -125,7 +125,7 @@ class Comment extends ContentAbstract
 				->leftJoinPrefix('articles', 'comment.article = article.id', 'article')
 				->leftJoinPrefix('categories', 'article.category = category.id', 'category')
 				->leftJoinPrefix('categories', 'category.parent = parent.id', 'parent')
-				->select('parent.alias', 'parent_alias')
+				->select('parent.alias', 'parentAlias')
 				->select('category.alias', 'categoryAlias')
 				->select('article.alias', 'articleAlias')
 				->select('comment.id', 'commentId')
