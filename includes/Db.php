@@ -318,11 +318,14 @@ class Db extends ORM
 
 		/* process settings */
 
-		foreach ($settings as $setting)
+		if ($key)
 		{
-			if ($setting->name === $key)
+			foreach ($settings as $setting)
 			{
-				return $setting->value;
+				if ($setting->name === $key)
+				{
+					return $setting->value;
+				}
 			}
 		}
 		return null;
