@@ -128,14 +128,15 @@ class Comment extends ContentAbstract
 				->select('parent.alias', 'parentAlias')
 				->select('category.alias', 'categoryAlias')
 				->select('article.alias', 'articleAlias')
-				->select('comment.id', 'commentId')
+				->where('comment.id', $commentId)
 				->findArray();
 
 			/* handle route */
 
-			$key = array_search($commentId, array_column($routeArray, 'commentId'));
-			array_pop($routeArray[$key]);
-			return implode('/', array_filter($routeArray[$key])) . '#comment-' . $commentId;
+			if (is_array($routeArray[0]))
+			{
+				return implode('/', array_filter($routeArray[0])) . '#comment-' . $commentId;
+			}
 		}
 		return null;
 	}

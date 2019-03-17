@@ -63,14 +63,15 @@ class Category extends ContentAbstract
 				->leftJoinPrefix('categories', 'category.parent = parent.id', 'parent')
 				->select('parent.alias', 'parentAlias')
 				->select('category.alias', 'categoryAlias')
-				->select('category.id', 'categoryId')
+				->where('category.id', $categoryId)
 				->findArray();
 
 			/* handle route */
 
-			$key = array_search($categoryId, array_column($routeArray, 'categoryId'));
-			array_pop($routeArray[$key]);
-			return implode('/', array_filter($routeArray[$key]));
+			if (is_array($routeArray[0]))
+			{
+				return implode('/', array_filter($routeArray[0]));
+			}
 		}
 		return null;
 	}

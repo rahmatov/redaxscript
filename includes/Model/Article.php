@@ -142,14 +142,15 @@ class Article extends ContentAbstract
 				->select('parent.alias', 'parentAlias')
 				->select('category.alias', 'categoryAlias')
 				->select('article.alias', 'articleAlias')
-				->select('article.id', 'articleId')
+				->where('article.id', $articleId)
 				->findArray();
 
 			/* handle route */
 
-			$key = array_search($articleId, array_column($routeArray, 'articleId'));
-			array_pop($routeArray[$key]);
-			return implode('/', array_filter($routeArray[$key]));
+			if (is_array($routeArray[0]))
+			{
+				return implode('/', array_filter($routeArray[0]));
+			}
 		}
 		return null;
 	}
