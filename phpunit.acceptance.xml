@@ -19,15 +19,15 @@
 
 	<testsuites>
 
-		<!-- installation-->
+		<!-- installation -->
 
-		<testsuite name="acceptance">
+		<testsuite name="installation">
 			<file>tests/acceptance/InstallationTest.php</file>
 		</testsuite>
 
-		<!-- login-->
+		<!-- login -->
 
-		<testsuite name="acceptance">
+		<testsuite name="login">
 			<file>tests/acceptance/LoginTest.php</file>
 		</testsuite>
 </testsuites>
