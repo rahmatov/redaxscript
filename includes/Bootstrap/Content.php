@@ -4,7 +4,6 @@ namespace Redaxscript\Bootstrap;
 use Redaxscript\Db;
 use Redaxscript\Model;
 use Redaxscript\Validator;
-use function is_numeric;
 
 /**
  * children class to boot the content
