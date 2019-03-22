@@ -39,7 +39,7 @@ class Db extends ORM
 	 * @param Config $config instance of the config class
 	 */
 
-	public static function construct(Config $config)
+	public static function construct(Config $config) : void
 	{
 		self::$_config = $config;
 	}
@@ -50,7 +50,7 @@ class Db extends ORM
 	 * @since 3.1.0
 	 */
 
-	public static function init()
+	public static function init() : void
 	{
 		$dbType = self::$_config->get('dbType');
 		$dbHost = self::$_config->get('dbHost');

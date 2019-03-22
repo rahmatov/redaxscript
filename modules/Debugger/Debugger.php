@@ -43,7 +43,7 @@ class Debugger extends Module\Module
 	 * @since 3.0.0
 	 */
 
-	public function renderStart()
+	public function renderStart() : void
 	{
 		/* script */
 
@@ -59,7 +59,7 @@ class Debugger extends Module\Module
 	 * @since 4.0.0
 	 */
 
-	public function renderEnd()
+	public function renderEnd() : void
 	{
 		$debuggerArray = $this->_getArray();
 		$inline = file_get_contents('modules/Debugger/assets/scripts/debugger.js');

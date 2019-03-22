@@ -23,7 +23,7 @@ class Content extends BootstrapAbstract
 	 * @since 3.1.0
 	 */
 
-	public function autorun()
+	public function autorun() : void
 	{
 		if ($this->_registry->get('dbStatus') === 2)
 		{
@@ -37,7 +37,7 @@ class Content extends BootstrapAbstract
 	 * @since 3.1.0
 	 */
 
-	protected function _setContent()
+	protected function _setContent() : void
 	{
 		$aliasValidator = new Validator\Alias();
 		$firstParameter = $this->_registry->get('firstParameter');
@@ -70,7 +70,7 @@ class Content extends BootstrapAbstract
 	 * @since 3.1.0
 	 */
 
-	protected function _setTableByRoot()
+	protected function _setTableByRoot() : void
 	{
 		$settingModel = new Model\Setting();
 		$homepage = $settingModel->get('homepage');
@@ -88,7 +88,7 @@ class Content extends BootstrapAbstract
 	 * @since 3.1.0
 	 */
 
-	protected function _setTableByParameter()
+	protected function _setTableByParameter() : void
 	{
 		$contentModel = new Model\Content();
 		$firstParameter = $this->_registry->get('firstParameter');
@@ -119,7 +119,7 @@ class Content extends BootstrapAbstract
 	 * @since 3.3.0
 	 */
 
-	protected function _setIdByRoot()
+	protected function _setIdByRoot() : void
 	{
 		$settingModel = new Model\Setting();
 		$order = $settingModel->get('order');
@@ -152,7 +152,7 @@ class Content extends BootstrapAbstract
 	 * @since 3.1.0
 	 */
 
-	protected function _setIdByParameter()
+	protected function _setIdByParameter() : void
 	{
 		$lastParameter = $this->_registry->get('lastParameter');
 		if ($lastParameter)
@@ -173,7 +173,7 @@ class Content extends BootstrapAbstract
 	 * @param array $whereArray
 	 */
 
-	protected function _setId(array $whereArray = [])
+	protected function _setId(array $whereArray = []) : void
 	{
 		$categoryModel = new Model\Category();
 		$articleModel = new Model\Article();

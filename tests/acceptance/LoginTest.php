@@ -22,7 +22,7 @@ class LoginTest extends TestCaseAbstract
 	 * @since 4.0.0
 	 */
 
-	public function setUp()
+	public function setUp() : void
 	{
 		parent::setUp();
 		$this->_driver->get('http://localhost:8000/?p=login');
@@ -34,7 +34,7 @@ class LoginTest extends TestCaseAbstract
 	 * @since 4.0.0
 	 */
 
-	public function testTitle()
+	public function testTitle() : void
 	{
 		/* expect and actual */
 
@@ -52,7 +52,7 @@ class LoginTest extends TestCaseAbstract
 	 * @since 4.0.0
 	 */
 
-	public function testLogin()
+	public function testLogin() : void
 	{
 		/* prepare */
 

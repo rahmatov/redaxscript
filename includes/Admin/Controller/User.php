@@ -261,7 +261,7 @@ class User extends ControllerAbstract
 	 * @param array $refreshArray array of the update
 	 */
 
-	protected function _refresh(array $refreshArray = [])
+	protected function _refresh(array $refreshArray = []) : void
 	{
 		$auth = new Auth($this->_request);
 		$auth->init();
