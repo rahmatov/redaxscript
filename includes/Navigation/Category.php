@@ -95,6 +95,7 @@ class Category extends NavigationAbstract
 			]);
 		$itemElement = $element->copy()->init('li');
 		$linkElement = $element->copy()->init('a');
+		$textElement = $element->copy()->init('span');
 
 		/* collect item output */
 
@@ -135,9 +136,7 @@ class Category extends NavigationAbstract
 		}
 		else if (!$categories->count())
 		{
-			$output .= $listElement->html(
-				$itemElement->text($this->_language->get('category_no'))
-			);
+			$output .= $listElement->html($itemElement->html($textElement->text($this->_language->get('category_no'))));
 		}
 		return $output;
 	}
