@@ -120,6 +120,7 @@ class Common extends BootstrapAbstract
 		$moduleArray = function_exists('apache_get_modules') ? apache_get_modules() : [];
 		$fallbackArray =
 		[
+			'mod_brotli',
 			'mod_deflate',
 			'mod_headers',
 			'mod_rewrite'
